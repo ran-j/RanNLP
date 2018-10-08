@@ -123,18 +123,17 @@ Namespace IA
             End Try
         End Function
 
-
 #Region "Privates"
 
         Private Sub PopulateList(ByRef lang As String)
             If (lang = "PT") Then
                 Max = 12
                 Max2 = 13
-                Max3 = 8
+                Max3 = 7
 
                 pluralList = New String(12, 1) {{"l", "is"}, {"el", "eis"}, {"ol", "ois"}, {"ul", "uis"}, {"ou", "aram"}, {"oi", "oram"}, {"ão", "ães"}, {"m", "ns"}, {"er", "eres"}, {"r", "res"}, {"z", "zes"}, {"l", "s"}, {"ção", "ções"}}
 
-                singularList = New String(8, 1) {{"il", "eis"}, {"oi", "oram"}, {"ão", "ães"}, {"m", "ns"}, {"er", "eres"}, {"r", "res"}, {"z", "zes"}, {"ção", "ções"}, {"l", "s"}}
+                singularList = New String(7, 1) {{"il", "eis"}, {"oi", "oram"}, {"ão", "ães"}, {"m", "ns"}, {"er", "eres"}, {"r", "res"}, {"z", "zes"}, {"ção", "ções"}}
 
                 ExceptionsList = New String(13, 1) {{"mal", "males"}, {"férias", "férias"}, {"ônibus", "ônibus"}, {"cônsul", "cônsules"}, {"órfãos", "órfães"}, {"sótãos", "sótães"}, {"órgãos", "órgães"}, {"cidadão", "cidadãos"}, {"cidadãos", "cidadães"}, {"irmãos", "irmães"}, {"cristãos", "cristães"}, {"inútil", "inúteis"}, {"réptil", "répteis"}, {"eu", "eu"}}
 
