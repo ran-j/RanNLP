@@ -1,0 +1,10 @@
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\bin\Debug\RanNLP.dll
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\bin\Debug\RanNLP.pdb
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\bin\Debug\RanNLP.xml
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbprojAssemblyReference.cache
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.Resources.resources
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbproj.GenerateResource.cache
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbproj.CoreCompileInputs.cache
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.dll
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.xml
+C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.pdb
