@@ -20,7 +20,7 @@ Turn words into singular (Very instable)
 
 ```vb
 Private NLP As New NLP("PT")
-MsgBox(NLP.Pluralize("abordagens"))
+MsgBox(NLP.Singularize("abordagens"))
  'Return "abordagem"
 ```
 
