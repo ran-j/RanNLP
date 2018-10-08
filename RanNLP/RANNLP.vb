@@ -14,7 +14,7 @@ Namespace IA
             PopulateList(lang.ToUpper())
         End Sub
 
-        Public Function Stem(ByRef stringText As String) As String
+        Public Function Stem(ByVal stringText As String) As String
 
             Dim result As String = RemoveEspecials(stringText).ToLower()
 
@@ -29,7 +29,7 @@ Namespace IA
 
         End Function
 
-        Public Function WordTokenize(ByRef stringText As String) As String()
+        Public Function WordTokenize(ByVal stringText As String) As String()
             If (stringText.Contains(" ")) Then
                 Return Regex.Split(stringText, " ")
             Else
@@ -37,11 +37,11 @@ Namespace IA
             End If
         End Function
 
-        Public Function WordsLike(ByRef word1 As String, word2 As String) As Single
+        Public Function WordsLike(ByVal word1 As String, word2 As String) As Single
             Return StartCompare(word1, word2)
         End Function
 
-        Public Function Singularize(ByRef stringText As String) As String
+        Public Function Singularize(ByVal stringText As String) As String
             Try
                 Dim result As String = stringText
                 Dim textprocess = stringText.Split(" ")
@@ -82,7 +82,7 @@ Namespace IA
             End Try
         End Function
 
-        Public Function Pluralize(ByRef stringText As String) As String
+        Public Function Pluralize(ByVal stringText As String) As String
             Try
                 Dim result As String = stringText
                 Dim textprocess = stringText.Split(" ")
@@ -125,7 +125,7 @@ Namespace IA
 
 #Region "Privates"
 
-        Private Sub PopulateList(ByRef lang As String)
+        Private Sub PopulateList(ByVal lang As String)
             If (lang = "PT") Then
                 Max = 12
                 Max2 = 13
