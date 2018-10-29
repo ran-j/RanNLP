@@ -16,7 +16,7 @@ The following functions are available:
 Examples
 
 # Singularize
-Turn words into singular (Very instable)
+Turn words into singular (Very Unstable)
 
 ```vb
 Private NLP As New NLP("PT")
