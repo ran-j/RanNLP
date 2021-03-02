@@ -235,9 +235,9 @@ Namespace IA
             Else
                 Throw New Exception("Invalid language")
             End If
-            pluraliseCount = pluralList.Length - 1
+            pluraliseCount = (pluralList.Length / 2)
             Max = pluraliseCount - 1
-            Max3 = singularList.Length - 1
+            Max3 = (singularList.Length / 2) - 1
         End Sub
 
         Private Function PercentTheSame(ByVal Text As String, ByVal CompareWith As String) As Single
