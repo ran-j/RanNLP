@@ -13,6 +13,7 @@ The following functions are available:
 | TransformText     | all      |   None | 
 | RemoveEspecials     | all      |   None | 
 | Levenshtein     | all      |   None | 
+| Tokenize     | all      |   None | 
 | Stem     | English ,Portugese       |   None |
 
 
@@ -22,7 +23,7 @@ Examples
 Turn words into singular (Very Unstable)
 
 ```vb
-Private RanNLP As New NLP("PT")
+Private RanNLP As New NLP(Language.PT)
 MsgBox(NLP.Singularize("abordagens"))
  'Return "abordagem"
 ```
@@ -31,7 +32,7 @@ MsgBox(NLP.Singularize("abordagens"))
 Turn words into plural
 
 ```vb
-Private RanNLP As New NLP("PT")
+Private RanNLP As New NLP(Language.PT)
 MsgBox(NLP.Pluralize("casa"))
  'Return "casas"
 ```
@@ -39,7 +40,7 @@ MsgBox(NLP.Pluralize("casa"))
 Check similarity of words and return a float with confidentiality
 
 ```vb
-Private RanNLP As New NLP("PT")
+Private RanNLP As New NLP(Language.PT)
 MsgBox(NLP.WordsLike("casa","casarão"))
  'Return 57.14286
 ```
@@ -48,7 +49,7 @@ MsgBox(NLP.WordsLike("casa","casarão"))
 
 Stem words
 ```vb
-Private RanNLP As New NLP("PT")
+Private RanNLP As New NLP(Language.PT)
 MsgBox(NLP.Stem("papelaria"))
  'Return "papel"
 ```
@@ -78,7 +79,7 @@ Debug.Print(NLP.RemoveEspecials("eleição"))
 # Levenshtein
 
 ```vb
-Private RanNLP As New NLP("PT")
+Private RanNLP As New NLP(Language.PT)
 
 Dim LowerAllText As Boolean = True
 
@@ -87,4 +88,17 @@ Debug.Print(RanNLP.Levenshtein("casa", "Casarão", LowerAllText))
 'Returns 
     '4'
     '3'
+```
+
+# Tokenize
+
+```vb
+Private RanNLP As New NLP(Language.PT) 
+
+RanNLP.Tokenize("ola mundo todo. teste 3+3")
+
+'Returns tokenize words ex
+    'Token.Type: "Text"
+    'Token.line': 0
+    'Token.value': "ola"
 ```

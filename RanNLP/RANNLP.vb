@@ -2,6 +2,23 @@
 
 Namespace IA
 
+    Public Class Token
+        Private Type As String
+        Private value As String
+        Private line As Object
+
+        Public Sub New(Type As String, value As String, line As Object)
+            Me.Type = Type
+            Me.value = value
+            Me.line = line
+        End Sub
+
+        Public Overrides Function ToString() As String
+            Return Me.value
+        End Function
+
+    End Class
+
     Public Class NLP
 
         Public Enum Language
@@ -177,6 +194,77 @@ Namespace IA
             End Try
         End Function
 
+        Public Function Tokenize(ByVal input As String)
+            Dim inputArray As String() = input.Split(" ")
+            Dim result As List(Of Token) = New List(Of Token)
+            For i As Integer = 0 To inputArray.Count - 1
+                Dim word As String = inputArray(i)
+                If (word IsNot "") Then
+                    Dim notMarkAsSpecial As Boolean = True
+                    Dim notMarkAsIntenger As Boolean = True
+                    Dim notMarkAsOperator As Boolean = True
+
+                    Dim outPutInnerWords As List(Of String) = New List(Of String)
+                    Dim outPutInnerWordsDigit As List(Of String) = New List(Of String)
+                    Dim outPutInnerWordsOperator As List(Of String) = New List(Of String)
+
+                    For j As Integer = 0 To word.Count - 1
+                        If (isEspecialCharacter(word(j))) Then
+                            outPutInnerWords.Add(word(j))
+                        End If
+                    Next
+
+                    For j As Integer = 0 To word.Count - 1
+                        If (isDigit(word(j))) Then
+                            outPutInnerWordsDigit.Add(word(j))
+                        End If
+                    Next
+
+                    For j As Integer = 0 To word.Count - 1
+                        If (isOperator(word(j))) Then
+                            outPutInnerWordsOperator.Add(word(j))
+                        End If
+                    Next
+
+                    If (isDigit(word)) Then
+                        notMarkAsIntenger = False
+                        result.Add(New Token("Literal", word, i))
+                    ElseIf (isLetter(word)) Then
+                        result.Add(New Token("Text", word, i))
+                    ElseIf (isOperator(word)) Then
+                        notMarkAsOperator = False
+                        result.Add(New Token("Operator", word, i))
+                    ElseIf (isEspecialCharacter(word)) Then
+                        notMarkAsSpecial = False
+                        result.Add(New Token("Especial character", word, i))
+                    Else
+                        result.Add(New Token("Unknow", word, i))
+                    End If
+
+                    If (notMarkAsSpecial) Then
+                        For j As Integer = 0 To outPutInnerWords.Count - 1
+                            result.Add(New Token("Especial character", outPutInnerWords(j), i))
+                        Next
+                    End If
+
+                    If (notMarkAsIntenger) Then
+                        For j As Integer = 0 To outPutInnerWordsDigit.Count - 1
+                            result.Add(New Token("Literal", outPutInnerWordsDigit(j), i))
+                        Next
+                    End If
+
+                    If (notMarkAsOperator) Then
+                        For j As Integer = 0 To outPutInnerWordsOperator.Count - 1
+                            result.Add(New Token("Operator", outPutInnerWordsOperator(j), i))
+                        Next
+                    End If
+
+                End If
+            Next
+            Return result
+        End Function
+
+
         Public Shared Function TransformText(ByVal stringText As String, ByVal modifier As Transform) As String
             Select Case modifier
                 Case Transform.LowerCase
@@ -221,6 +309,26 @@ Namespace IA
         End Function
 
 #Region "Privates"
+
+        Private Function isComma(ByVal input As String)
+            Return input = ","
+        End Function
+
+        Private Function isDigit(ByVal input As String)
+            Return New Regex("^[0-9 ]+$").IsMatch(input)
+        End Function
+
+        Private Function isLetter(ByVal input As String)
+            Return New Regex("^[a-z]", RegexOptions.IgnoreCase).IsMatch(input)
+        End Function
+
+        Private Function isOperator(ByVal input As String)
+            Return New Regex("/\+|-|\*|\/|\^/").IsMatch(input)
+        End Function
+
+        Private Function isEspecialCharacter(ByVal input As String)
+            Return New Regex("[~`!@#$%^&*()-+=|{}':;.,<>/?]").IsMatch(input)
+        End Function
 
         Private Sub PopulateList(ByVal lang As Language)
             If (lang.Equals(Language.PT)) Then
