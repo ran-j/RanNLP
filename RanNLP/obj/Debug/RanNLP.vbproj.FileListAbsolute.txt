@@ -8,3 +8,13 @@ C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbproj.CoreCompileIn
 C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.dll
 C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.xml
 C:\Users\Ran-pc\source\repos\RanNLP\RanNLP\obj\Debug\RanNLP.pdb
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\bin\Debug\RanNLP.dll
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\bin\Debug\RanNLP.pdb
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\bin\Debug\RanNLP.xml
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbprojAssemblyReference.cache
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.Resources.resources
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbproj.GenerateResource.cache
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.vbproj.CoreCompileInputs.cache
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.dll
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.xml
+C:\Users\ran-j\Source\Repos\RanNLP\RanNLP\obj\Debug\RanNLP.pdb
